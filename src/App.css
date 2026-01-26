@@ -1,4 +1,233 @@
+/* =========================
+   1) Base / Reset
+========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   2) Design Tokens
+========================= */
+:root {
+    /* sizing */
+    --container-max: 1280px;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --space-6: 6rem;
+
+    /* typography */
+    --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --fs-base: 1.8rem;
+    --lh-base: 1.4;
+
+    /* colors */
+    --text-color: #fff;
+
+    /* gradients */
+    --bg-gradient: linear-gradient(180deg, #000 0%, #002a4d 100%);
+    --logo-poly-gradient: linear-gradient(90deg, #2a7b9b 20%, #3c9961 50%, #488f15 100%);
+    --logo-text-gradient: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+
+    /* motion */
+    --logo-spin-duration: 20s;
+    --transition-fast: 300ms;
+}
+
+/* =========================
+   3) Document Defaults
+========================= */
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  padding: 10px;
+    min-height: 100dvh;
+    font-family: var(--font-family);
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: var(--text-color);
+    background: var(--bg-gradient);
+}
+
+/* =========================
+   4) Layout
+========================= */
+#root {
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: var(--space-2);
+    text-align: center;
+}
+
+/* =========================
+   5) Typography Scale
+========================= */
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+h2 {
+    font-size: 3.5rem;
+}
+h3 {
+    font-size: 3rem;
+} /* statt 3ch */
+p {
+    font-size: 2.5rem;
+}
+small {
+    font-size: 1.8rem;
+}
+
+/* =========================
+  App / Global
+========================= */
+
+.app {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-2);
+    min-height: 100vh;
+}
+
+/* =========================
+  Header / Logo
+========================= */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    height: 6rem; /* statt em -> konsistent */
+    padding: 1.5rem;
+    transition: filter var(--transition-fast);
+    will-change: filter;
+}
+
+.logo__polygon {
+    width: 5rem;
+    aspect-ratio: 1;
+    background: var(--logo-poly-gradient);
+    clip-path: polygon(
+        100% 50%,
+        81.17% 89.09%,
+        38.87% 98.75%,
+        4.95% 71.69%,
+        4.95% 28.31%,
+        38.87% 1.25%,
+        81.17% 10.91%,
+        100% 50%,
+        calc(81.17% - 3.12px) calc(10.91% - -3.91px),
+        calc(38.87% - -1.11px) calc(1.25% - -4.87px),
+        calc(4.95% - -4.5px) calc(28.31% - -2.17px),
+        calc(4.95% - -4.5px) calc(71.69% - 2.17px),
+        calc(38.87% - -1.11px) calc(98.75% - 4.87px),
+        calc(81.17% - 3.12px) calc(89.09% - 3.91px),
+        calc(100% - 5px) calc(50% - 0px),
+        calc(81.17% - 3.12px) calc(10.91% - -3.91px)
+    );
+}
+
+.logo__text {
+    font-size: 3rem; /* statt 40px */
+    font-weight: 400;
+    background: var(--logo-text-gradient);
+
+    /* gradient auf buchstaben */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   7) Animations
+========================= */
+@keyframes logo-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo__polygon {
+        animation: logo-spin infinite var(--logo-spin-duration) linear;
+    }
+}
+
+/* padding */
+.p-1 {
+    padding: var(--space-1);
+}
+.p-2 {
+    padding: var(--space-2);
+}
+.p-3 {
+    padding: var(--space-3);
+}
+.p-4 {
+    padding: var(--space-4);
+}
+
+/* padding-y / padding-x */
+.py-1 {
+    padding-block: var(--space-1);
+}
+.py-2 {
+    padding-block: var(--space-2);
+}
+.py-3 {
+    padding-block: var(--space-3);
+}
+.py-4 {
+    padding-block: var(--space-4);
+}
+.px-1 {
+    padding-inline: var(--space-1);
+}
+.px-2 {
+    padding-inline: var(--space-2);
+}
+.px-3 {
+    padding-inline: var(--space-3);
+}
+.px-4 {
+    padding-inline: var(--space-4);
+}
+
+/* margin */
+.mt-1 {
+    margin-top: var(--space-1);
+}
+.mt-2 {
+    margin-top: var(--space-2);
+}
+.mt-3 {
+    margin-top: var(--space-3);
+}
+.mt-4 {
+    margin-top: var(--space-4);
+}
+.mb-1 {
+    margin-bottom: var(--space-1);
+}
+.mb-2 {
+    margin-bottom: var(--space-2);
+}
+.mb-3 {
+    margin-bottom: var(--space-3);
+}
+.mb-4 {
+    margin-bottom: var(--space-4);
 }
