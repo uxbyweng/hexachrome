@@ -1,4 +1,4 @@
-# HexChroma
+# HexaChrome
 
 Modern React color theme builder with palette management and real-time preview.
 
