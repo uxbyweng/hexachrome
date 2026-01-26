@@ -1,5 +1,17 @@
-import "./Color.css";
+// Components\Color\Color.jsx
 
+import "./Color.css";
 export default function Color({ color }) {
-  return null;
+    const isDark = color.contrastText === "#000000";
+    //console.log(isDark);
+
+    return (
+        <div className="color" style={{ backgroundColor: color.hex }}>
+            <h2 className="color__hex">{color.hex}</h2>
+            <p className={`color__role ${isDark ? "color__role--dark" : ""}`}>
+                <strong>{color.role}</strong>
+            </p>
+            <p className={`color__contrast ${isDark ? "color__contrast--dark" : ""}`}>contrast: {color.contrastText}</p>
+        </div>
+    );
 }
