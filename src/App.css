@@ -1,4 +1,5 @@
 @import "./assets/styles/main.css";
+@import "./assets/styles/fonts.css";
 @import "./assets/styles/variables.css";
 
 html {
@@ -8,7 +9,7 @@ html {
 
 body {
     min-height: 100dvh;
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: 1.8rem;
     line-height: 1.4;
     color: var(--text-color);
@@ -25,9 +26,8 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 300;
 }
 h2 {
     font-size: 3.5rem;
@@ -40,6 +40,22 @@ p {
 }
 small {
     font-size: 1.8rem;
+}
+
+/* Form */
+.cForm {
+    background: #fff;
+}
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 /* Color Theme List --> eventuell als Component auslagern */

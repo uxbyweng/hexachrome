@@ -1,6 +1,7 @@
 /* Variables */
 :root {
-    --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-body: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-title: "Dancing Script";
     --text-color: #fff;
     --bg-gradient: linear-gradient(180deg, #000a1e 0%, #002a4d 100%);
     --logo-poly-gradient: linear-gradient(90deg, #2a7b9b 20%, #3c9961 50%, #488f15 100%);
