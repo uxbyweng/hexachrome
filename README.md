@@ -1,20 +1,50 @@
-# Recap Project 4: Theme Creator
+# HexChroma
 
-In this project, you will create an interactive Color Theme Creator app.
+Modern React color theme builder with palette management and real-time preview.
 
-This is an individual project, so please create new project following this [guide to setup your repository](./docs/github-respository-template.md).
+## Features
 
-## Overview
+- Browse and switch between preset themes
+- Create custom color themes (HEX-based)
+- Manage palettes (add/edit/remove colors)
+- Live preview on an example page to test look & feel
 
-In this project, we will create an Color Theme Creator app.
-Users can add new color theme, edit and delete them. They can also copy the color hexa code of it.
+## Tech Stack
 
-![wireframes](./docs/wireframes.excalidraw.png)
+- React (Vite)
+- JavaScript
+
+## Getting Started
+
+```bash
+# install dependencies
+npm install
+
+# start dev server
+npm run dev
+
+# Build
+npm run build
+npm run preview
+```
+
+# Deployment
+
+Deployed with Vercel.
 
 ## API
 
-For issue `#7: Fetch API to Check If Contrast Is Okay`, you will be using [are my colors accessible api](https://www.aremycolorsaccessible.com/api-page).
+Fetch API to Check If Contrast Is Okay
+[are my colors accessible api](https://www.aremycolorsaccessible.com/api-page)
 
 ```bash
 https://www.aremycolorsaccessible.com/api-page
 ```
+
+# Project Notes
+
+This project was built as a recap exercise to practice React fundamentals, state management, and UI composition.
+
+# License
+
+MIT
