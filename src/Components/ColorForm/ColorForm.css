@@ -1,0 +1,48 @@
+/* ColorForm */
+.cForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #485250;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+}
+form {
+    display: grid;
+    gap: 1rem;
+}
+input {
+    color: black;
+}
+button[type="submit"] {
+    background-color: #04aa6d;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+    padding: 3px 12px 3px 12px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    min-width: 30%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+.color-picker {
+    height: 33px;
+}

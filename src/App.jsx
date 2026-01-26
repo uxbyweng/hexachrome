@@ -1,37 +1,32 @@
 // App.jsx
-
+import { useState } from "react";
 import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
+import ColorForm from "./Components/ColorForm/ColorForm";
 import "./App.css";
 import Header from "./Components/Header/Header";
 
 function App() {
+    const [colors, setColors] = useState(initialColors);
+
+    const handleAddColor = (newColor) => {
+        const updatedColors = [...colors, newColor]; // alte Liste kopieren + neue Farbe anhängen
+        setColors(updatedColors); // State setzen
+        console.log(updatedColors); // das ist der neue Stand
+    };
+
     return (
         <div className="app">
             <Header />
             <main>
                 <section className="cForm">
-                    <form data-js="form" method="get">
-                        <label>
-                            Role
-                            <input name="role" id="role" type="text" placeholder="some color" />
-                        </label>
-                        <label>
-                            Hex
-                            <input name="hex" id="hex" type="text" placeholder="#123456" />
-                        </label>
-                        <label>
-                            Contrast Text
-                            <input name="hex" id="hex" type="text" placeholder="#ffffff" />
-                        </label>
-                        <input type="submit" value="Add mColor" />
-                    </form>
+                    <ColorForm onAddColor={handleAddColor} colorCount={colors.length + 1} />
                 </section>
                 <section className="theme">
                     <ul className="theme__list">
-                        {initialColors.map((colors) => (
-                            <li key={colors.id} className="theme__list-item">
-                                <Color color={colors} />
+                        {colors.map((color) => (
+                            <li key={color.id} className="theme__list-item">
+                                <Color color={color} />
                             </li>
                         ))}
                     </ul>
