@@ -1,0 +1,75 @@
+/* Header */
+
+.header {
+    background-color: rgb(0, 10, 30);
+    border-bottom: 1px solid rgb(55, 60, 70);
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    height: 120px;
+    box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
+    -webkit-box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
+    -moz-box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.7rem;
+    height: 6rem;
+    padding: 0.5rem;
+    transition: filter 300ms;
+    will-change: filter;
+}
+
+.header__logo-polygon {
+    width: 5rem;
+    aspect-ratio: 1;
+    background: var(--logo-poly-gradient);
+    clip-path: polygon(
+        100% 50%,
+        81.17% 89.09%,
+        38.87% 98.75%,
+        4.95% 71.69%,
+        4.95% 28.31%,
+        38.87% 1.25%,
+        81.17% 10.91%,
+        100% 50%,
+        calc(81.17% - 3.12px) calc(10.91% - -3.91px),
+        calc(38.87% - -1.11px) calc(1.25% - -4.87px),
+        calc(4.95% - -4.5px) calc(28.31% - -2.17px),
+        calc(4.95% - -4.5px) calc(71.69% - 2.17px),
+        calc(38.87% - -1.11px) calc(98.75% - 4.87px),
+        calc(81.17% - 3.12px) calc(89.09% - 3.91px),
+        calc(100% - 5px) calc(50% - 0px),
+        calc(81.17% - 3.12px) calc(10.91% - -3.91px)
+    );
+}
+
+.header__logo-chars {
+    font-size: 3rem;
+    font-weight: 400;
+    background: var(--logo-text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__title {
+    color: rgb(172, 172, 172);
+}
+
+/* Logo Animation */
+@keyframes logo-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header__logo-polygon {
+        animation: logo-spin infinite 10s linear;
+    }
+}

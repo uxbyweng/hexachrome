@@ -1,0 +1,8 @@
+/* Variables */
+:root {
+    --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --text-color: #fff;
+    --bg-gradient: linear-gradient(180deg, #000a1e 0%, #002a4d 100%);
+    --logo-poly-gradient: linear-gradient(90deg, #2a7b9b 20%, #3c9961 50%, #488f15 100%);
+    --logo-text-gradient: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
