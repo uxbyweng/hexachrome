@@ -10,7 +10,7 @@ function App() {
     const [colors, setColors] = useState(initialColors);
 
     const handleAddColor = (newColor) => {
-        const updatedColors = [...colors, newColor]; // alte Liste kopieren + neue Farbe anhängen
+        const updatedColors = [newColor, ...colors]; // alte Liste kopieren + neue Farbe anhängen
         setColors(updatedColors); // State setzen
         console.log(updatedColors); // das ist der neue Stand
     };

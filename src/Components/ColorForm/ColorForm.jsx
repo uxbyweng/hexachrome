@@ -13,7 +13,7 @@ export default function ColorForm({ onAddColor, colorCount }) {
             id: `c${colorCount}`, //uid(2),
             role: data.role,
             hex: data.hex,
-            contrast: data.contrast,
+            contrastText: data.contrastText,
         };
         //console.log(event.target.value);
 
@@ -28,20 +28,20 @@ export default function ColorForm({ onAddColor, colorCount }) {
             <h2>Add color {colorCount} </h2>
             <label htmlFor="role">
                 Role
-                <input name="role" id="role" type="text" placeholder="some color" />
+                <input name="role" id="role" type="text" defaultValue="some color" />
             </label>
             <label htmlFor="hex">
                 Hex
                 <div className="form-group">
-                    <input type="text" id="hex" name="hex" placeholder="#EEDDFF" />
-                    <input type="color" value="#EEDDFF" className="color-picker" />
+                    <input name="hex" id="hex" type="text" defaultValue="#00ff00" />
+                    <input type="color" value="#00ff00" className="color-picker" />
                 </div>
             </label>
             <label htmlFor="contrast">
                 Contrast Text
                 <div className="form-group">
-                    <input type="text" id="contrast" name="contrast" placeholder="#FFFFFF" />
-                    <input type="color" value="#FFFFFF" className="color-picker" />
+                    <input name="contrastText" id="contrastText" type="text" defaultValue="#000000" />
+                    <input type="color" value="#000000" className="color-picker" />
                 </div>
             </label>
             <button type="submit">Add Color</button>
