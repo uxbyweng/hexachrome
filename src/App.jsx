@@ -9,40 +9,25 @@ import Header from "./Components/Header/Header";
 function App() {
     const [colors, setColors] = useState(initialColors);
 
-    const colorCount = colors.length + 1;
-
     const handleAddColor = (newColor) => {
         const updatedColors = [newColor, ...colors]; // alte Liste kopieren + neue Farbe anhängen
         setColors(updatedColors); // State setzen
         console.log(updatedColors); // das ist der neue Stand
     };
 
-    function handleColorDelete(idToDelete) {
-        const updatedColors = [];
-
-        for (let i = 0; i < colors.length; i++) {
-            const color = colors[i];
-
-            if (color.id !== idToDelete) {
-                updatedColors.push(color);
-            }
-        }
-        setColors(updatedColors);
-    }
-
     return (
         <div className="app">
             <Header />
             <main>
                 <section className="cForm">
-                    <ColorForm onAddColor={handleAddColor} onColorDelete={handleColorDelete} />
+                    <ColorForm onAddColor={handleAddColor} />
                 </section>
                 <section className="theme">
-                    <p>Current colors in the theme: {`${colorCount}`}</p>
+                    <p>Current theme colors: </p>
                     <ul className="theme__list">
                         {colors.map((color) => (
                             <li key={color.id} className="theme__list-item">
-                                <Color color={color} onColorDelete={handleColorDelete} id={color.id} />
+                                <Color color={color} />
                             </li>
                         ))}
                     </ul>

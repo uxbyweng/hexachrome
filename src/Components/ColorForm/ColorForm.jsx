@@ -4,7 +4,7 @@ import "./ColorForm.css";
 import ColorInput from "../ColorInput/ColorInput";
 import { uid } from "uid";
 
-export default function ColorForm({ onAddColor, initialData = { role: "some color", hex: "#00ff00", contrastText: "#000000" }, onDelete, id }) {
+export default function ColorForm({ onAddColor, initialData = { role: "some color", hex: "#00ff00", contrastText: "#000000" } }) {
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -12,12 +12,11 @@ export default function ColorForm({ onAddColor, initialData = { role: "some colo
         const data = Object.fromEntries(formData);
 
         const newColorObject = {
-            id: uid(2), // `c${colorCount}`,
+            id: uid(16),
             role: data.role,
             hex: data.hex,
             contrastText: data.contrastText,
         };
-        //console.log(event.target.value);
 
         onAddColor(newColorObject);
 
@@ -40,7 +39,7 @@ export default function ColorForm({ onAddColor, initialData = { role: "some colo
                 Contrast Text
                 <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
             </label>
-            <button type="submit" class="btn btn--submit">
+            <button type="submit" className="btn btn--submit">
                 Add Color
             </button>
         </form>
