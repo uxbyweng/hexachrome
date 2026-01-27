@@ -1,0 +1,10 @@
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+.color-picker {
+    height: 33px;
+}
