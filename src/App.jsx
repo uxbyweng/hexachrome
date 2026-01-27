@@ -9,6 +9,8 @@ import Header from "./Components/Header/Header";
 function App() {
     const [colors, setColors] = useState(initialColors);
 
+    const colorCount = colors.length + 1;
+
     const handleAddColor = (newColor) => {
         const updatedColors = [newColor, ...colors]; // alte Liste kopieren + neue Farbe anhängen
         setColors(updatedColors); // State setzen
@@ -33,9 +35,10 @@ function App() {
             <Header />
             <main>
                 <section className="cForm">
-                    <ColorForm onAddColor={handleAddColor} colorCount={colors.length + 1} onColorDelete={handleColorDelete} />
+                    <ColorForm onAddColor={handleAddColor} onColorDelete={handleColorDelete} />
                 </section>
                 <section className="theme">
+                    <p>Current colors in the theme: {`${colorCount}`}</p>
                     <ul className="theme__list">
                         {colors.map((color) => (
                             <li key={color.id} className="theme__list-item">
