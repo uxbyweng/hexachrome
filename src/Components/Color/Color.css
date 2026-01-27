@@ -33,12 +33,16 @@
 }
 
 .btn {
-    font-weight: 400;
+    font-weight: 500;
     border: none;
     border-radius: 20px;
     margin: 5px;
     padding: 5px 15px;
 }
+.btn:hover {
+    cursor: pointer;
+}
+
 .btn--cross {
     position: absolute;
     opacity: 0.5;
@@ -60,9 +64,6 @@
     background-color: rgb(177, 177, 177);
     color: rgb(0, 0, 0);
 }
-.btn--delete:hover {
-    cursor: pointer;
-}
 
 .overlay {
     position: absolute;
@@ -75,10 +76,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: 0.8;
-    background: rgba(0, 0, 0, 4.9);
-    backdrop-filter: blur(177px);
-    -webkit-backdrop-filter: blur(133px); /* Safari */
+    opacity: 0.9;
+    background: rgb(73, 21, 21);
     margin: 0;
 }
 .overlay__headline {
@@ -91,6 +90,6 @@
     padding: 0.1rem;
 }
 
-.hide {
+.overlay--hide {
     display: none;
 }
