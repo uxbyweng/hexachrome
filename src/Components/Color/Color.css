@@ -1,4 +1,5 @@
 .color {
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 15px;
     margin: 0px 10px;
@@ -29,4 +30,19 @@
 }
 .color__contrast--dark {
     color: #000a1e;
+}
+
+.btn--delete {
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    right: 0;
+}
+.btn--delete:hover {
+    cursor: pointer;
+    opacity: 1;
 }

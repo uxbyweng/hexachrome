@@ -15,8 +15,6 @@
 .header__logo {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1.7rem;
     height: 6rem;
     padding: 0.5rem;
     transition: filter 300ms;
@@ -47,18 +45,9 @@
     );
 }
 
-.header__logo-chars {
-    font-size: 3rem;
-    font-weight: 400;
-    background: var(--logo-text-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
 .header__title {
-    color: rgb(172, 172, 172);
+    color: rgb(18, 176, 73);
+    font-family: var(--font-title);
 }
 
 /* Logo Animation */

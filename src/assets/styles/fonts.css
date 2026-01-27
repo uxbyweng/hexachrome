@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "Dancing Script";
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/dancing-script/DancingScript-VariableFont_wght.ttf") format("woff2");
+}
