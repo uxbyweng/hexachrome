@@ -47,6 +47,7 @@ small {
     padding-right: 0;
 }
 .theme__list-item {
+    position: relative;
     margin-left: 0;
     margin: 2cqh 0;
 }
