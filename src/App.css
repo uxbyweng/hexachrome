@@ -39,7 +39,21 @@ small {
     font-size: 1.8rem;
 }
 
+.app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+}
+
+main {
+    padding: 2rem;
+}
+
 /* Color Theme List --> eventuell als Component auslagern */
+.theme__feedback {
+    margin-top: 20px;
+}
 .theme__list {
     list-style-type: none;
     line-height: 1.5;
@@ -50,15 +64,4 @@ small {
     position: relative;
     margin-left: 0;
     margin: 2cqh 0;
-}
-
-.app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0;
-    min-height: 100vh;
-}
-
-main {
-    padding: 2rem;
 }

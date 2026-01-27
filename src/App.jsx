@@ -9,23 +9,29 @@ import Header from "./Components/Header/Header";
 function App() {
     const [colors, setColors] = useState(initialColors);
 
+    // FEEDBACK - Anzahl Colors bzw. No Cololors
+    const feedback = colors.length > 0 ? `Total theme colors: ${colors.length}` : "No colors. Start by adding one!";
+
+    // COLOR HINZUFÜGEN
     const handleAddColor = (newColor) => {
-        const updatedColors = [newColor, ...colors]; // alte Liste kopieren + neue Farbe anhängen
+        const updatedColors = [newColor, ...colors]; // alte Color Liste kopieren und neue Color hinzufügen
         setColors(updatedColors); // State setzen
-        console.log(updatedColors); // das ist der neue Stand
+        console.log(updatedColors); // Aktuellen State in der Conole ausgeben
     };
 
+    // COLOR LÖSCHEN
     function handleColorDelete(idToDelete) {
         const updatedColors = [];
 
         for (let i = 0; i < colors.length; i++) {
+            console.log(colors.length);
             const color = colors[i];
 
             if (color.id !== idToDelete) {
                 updatedColors.push(color);
             }
+            setColors(updatedColors);
         }
-        setColors(updatedColors);
     }
     // code review suggestion from @klaus
     //  setColors(colors.filter(color => color.id !== idToDelete));
@@ -38,7 +44,7 @@ function App() {
                     <ColorForm onAddColor={handleAddColor} />
                 </section>
                 <section className="theme">
-                    <p>Current theme colors: </p>
+                    <p className="theme__feedback">{feedback}</p>
                     <ul className="theme__list">
                         {colors.map((color) => (
                             <li key={color.id} className="theme__list-item">
