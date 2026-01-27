@@ -4,7 +4,7 @@ import "./ColorForm.css";
 import ColorInput from "../ColorInput/ColorInput";
 import { uid } from "uid";
 
-export default function ColorForm({ onAddColor, colorCount, initialData = { role: "some color", hex: "#00ff00", contrastText: "#000000" } }) {
+export default function ColorForm({ onAddColor, colorCount, initialData = { role: "some color", hex: "#00ff00", contrastText: "#000000" }, onDelete, id }) {
     function handleSubmit(event) {
         event.preventDefault();
 
