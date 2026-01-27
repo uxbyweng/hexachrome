@@ -11,7 +11,7 @@ export default function Color({ color, onColorDelete, id }) {
             <p className="color__contrast" style={{ color: color.contrastText }}>
                 contrast: {color.contrastText}
             </p>
-            <button onClick={() => onColorDelete(id)} className="btn btn--delete" type="button" title="delete color">
+            <button type="button" className="btn btn--delete" onClick={() => onColorDelete(id)} aria-label={`Delete color ${color.hex}`}>
                 ✕
             </button>
         </div>
