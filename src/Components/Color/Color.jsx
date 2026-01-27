@@ -27,6 +27,9 @@ export default function Color({ color, onColorDelete, id }) {
                 <p className="color__contrast" style={{ color: color.contrastText }}>
                     contrast: {color.contrastText}
                 </p>
+                <button type="button" className="btn btn--edit">
+                    ✎
+                </button>
                 <button type="button" className="btn btn--cross" onClick={() => setIsOpen(true)} aria-label={`Delete color ${color.hex}`}>
                     ✕
                 </button>
