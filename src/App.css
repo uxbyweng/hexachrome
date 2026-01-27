@@ -39,18 +39,6 @@ small {
     font-size: 1.8rem;
 }
 
-/* Color Theme List --> eventuell als Component auslagern */
-.theme__list {
-    list-style-type: none;
-    line-height: 1.5;
-    padding-left: 0;
-    padding-right: 0;
-}
-.theme__list-item {
-    margin-left: 0;
-    margin: 2cqh 0;
-}
-
 .app {
     max-width: 1280px;
     margin: 0 auto;
@@ -60,4 +48,20 @@ small {
 
 main {
     padding: 2rem;
+}
+
+/* Color Theme List --> eventuell als Component auslagern */
+.theme__feedback {
+    margin-top: 20px;
+}
+.theme__list {
+    list-style-type: none;
+    line-height: 1.5;
+    padding-left: 0;
+    padding-right: 0;
+}
+.theme__list-item {
+    position: relative;
+    margin-left: 0;
+    margin: 2cqh 0;
 }
