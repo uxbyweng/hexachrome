@@ -25,7 +25,6 @@ function App() {
                 updatedColors.push(color);
             }
         }
-
         setColors(updatedColors);
     }
 

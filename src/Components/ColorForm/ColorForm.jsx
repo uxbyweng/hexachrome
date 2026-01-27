@@ -40,7 +40,9 @@ export default function ColorForm({ onAddColor, colorCount, initialData = { role
                 Contrast Text
                 <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
             </label>
-            <button type="submit">Add Color</button>
+            <button type="submit" class="btn btn--submit">
+                Add Color
+            </button>
         </form>
     );
 }
