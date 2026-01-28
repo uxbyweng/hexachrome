@@ -81,7 +81,7 @@ function App() {
             <Header />
             <main>
                 {activeEditId === null && (
-                    <section className="form">
+                    <section>
                         <ColorForm onAddColor={handleAddColor} isEditMode={false} />
                     </section>
                 )}

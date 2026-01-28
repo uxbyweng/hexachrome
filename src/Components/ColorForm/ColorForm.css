@@ -4,13 +4,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #485250;
+    background: #30453c;
+    background: linear-gradient(180deg, rgba(48, 69, 60, 1) 0%, rgba(218, 245, 235, 1) 100%);
     border: 1px solid #ccc;
     border-radius: 15px;
     margin: 10px;
     padding: 15px;
 }
-form[data-js="edit-color-form"] {
+form.form[data-js="edit-color-form"] {
+    background: white;
     padding: 15px;
 }
 .form__group {
@@ -20,6 +22,16 @@ form[data-js="edit-color-form"] {
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+}
+.form__group label {
+    color: #000a1e;
+    font-weight: 700;
+}
+.form__group input {
+    width: 14rem;
+}
+.form__group input.color-picker {
+    width: 6rem;
 }
 .form__group--picker {
     display: flex;
