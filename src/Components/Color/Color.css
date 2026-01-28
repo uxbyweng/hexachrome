@@ -31,6 +31,18 @@
 .color__contrast--dark {
     color: #000a1e;
 }
+.copy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.color__message {
+    font-size: 1.4rem;
+}
+.color__message--hide {
+    display: none;
+}
 
 .btn {
     font-weight: 500;
@@ -62,6 +74,17 @@
     right: 40px;
 }
 .btn--edit:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+.btn--copy {
+    background: white;
+    font-weight: 700;
+}
+img.btn--copy {
+    padding: 6px;
+}
+.btn--copy:hover {
     cursor: pointer;
     opacity: 1;
 }

@@ -1,6 +1,7 @@
 // Components\Color\Color.jsx
 import { useState } from "react";
 import ColorForm from "../ColorForm/ColorForm";
+import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 import "./Color.css";
 export default function Color({ color, onColorDelete, id, onEdit, isEditMode, onUpdateColor, onCancelEdit }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,15 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                         </button>
                     </menu>
                 </dialog>
-                <h2 className="color__hex">{color.hex}</h2>
+
+                <div className="copy">
+                    <h2 className="color__hex">{color.hex}</h2>
+                    <CopyToClipboard color={color} />
+                    <p className="color__message color__message--hide" style={{ color: color.contrastText }}>
+                        Copied!
+                    </p>
+                </div>
+
                 <p className="color__role" style={{ color: color.contrastText }}>
                     <strong>{color.role}</strong>
                 </p>
