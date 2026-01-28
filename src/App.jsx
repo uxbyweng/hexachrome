@@ -1,5 +1,6 @@
 // App.jsx
 import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import ColorForm from "./Components/ColorForm/ColorForm";
@@ -7,8 +8,20 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 
 function App() {
-    const [colors, setColors] = useState(initialColors);
-    const [activeEditId, setActiveEditId] = useState(null); // bei nul wird der editmodus ausgeschaltet
+    // STATE MIT LOCAL STORAGE
+    // key = "colors"
+    // options = defaultValue
+    const [colors, setColors] = useLocalStorageState("colors", {
+        // initial colors aus lib laden (wenn noch keine colors im local storage vorhanden )
+        defaultValue: initialColors,
+    });
+    setColors(initialColors);
+    console.log("colors", colors);
+
+    // STATE FÜR EDITMODE MIT ID
+    // wenn 'activeEditId' eine ID enthält => Edit Mode = aktive
+    // wenn 'activeEditId' den Wert 'null' enthält => Edit Mode ausgeschaltet
+    const [activeEditId, setActiveEditId] = useState(null);
 
     // FEEDBACK - Anzahl Colors bzw. No Cololors
     const feedback = colors.length > 0 ? `Total theme colors: ${colors.length}` : "No colors. Start by adding one!";

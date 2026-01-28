@@ -47,7 +47,7 @@ form.form[data-js="edit-color-form"] {
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 700;
-    padding: 0px;
+    padding: 2px 15px;
 }
 input {
     color: rgb(0, 0, 0);
