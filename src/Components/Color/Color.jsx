@@ -27,7 +27,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                     contrast: {color.contrastText}
                 </p>
 
-                {/* Edit-Form nur wenn diese Card nicht im Edit ist */}
+                {/* edit btn und delete button nur anzeigen wenn editmode nich aktiv ist */}
                 {!isEditMode && (
                     <>
                         <button type="button" className="btn btn--edit" onClick={onEdit} aria-label={`Edit color ${color.hex}`}>
@@ -39,7 +39,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                     </>
                 )}
 
-                {/* Edit-Form nur wenn diese Card im Edit ist */}
+                {/* color card nur anzeigen wenn editmode aktiv ist */}
                 {isEditMode && (
                     <>
                         <ColorForm isEditMode={true} initialData={color} onUpdateColor={onUpdateColor} />

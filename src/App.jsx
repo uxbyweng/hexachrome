@@ -41,8 +41,7 @@ function App() {
     }
 
     function handleCancelEdit() {
-        // macht edit wieder aus indem wir einfach null reinballern
-        // dann is wieder alles normal und das obere formular kommt zurück (glaub ich)
+        // color id auf "null" setzen damit sich edit formular wieder schliesst
         setEditingColorId(null);
     }
 
