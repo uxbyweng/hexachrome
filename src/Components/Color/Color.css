@@ -53,13 +53,23 @@
     cursor: pointer;
     opacity: 1;
 }
+
+.btn--edit {
+    position: absolute;
+    font-weight: 700;
+    opacity: 0.7;
+    top: 0;
+    right: 40px;
+}
+.btn--edit:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
 .btn--delete {
     background-color: red;
     color: white;
     padding: 5px 15px;
-}
-.btn--delete:hover {
-    cursor: pointer;
 }
 .btn--cancel {
     background-color: rgb(177, 177, 177);
