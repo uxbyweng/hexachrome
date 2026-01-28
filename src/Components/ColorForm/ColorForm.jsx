@@ -33,8 +33,8 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
 
         onAddColor(newColorObject);
 
-        event.target.reset();
-        event.target.elements.role.focus();
+        event.target.reset(); // formular wieder in den Ausgangszustand zurück setzen
+        event.target.elements.role.focus(); // Cursor wieder in das oberste Input (role) setzen
     }
 
     return !isEditMode ? (

@@ -63,8 +63,8 @@ function App() {
             if (color.id !== idToDelete) {
                 updatedColors.push(color);
             }
-            setColors(updatedColors);
         }
+        setColors(updatedColors);
     }
     // code review suggestion from @klaus
     //  setColors(colors.filter(color => color.id !== idToDelete));
