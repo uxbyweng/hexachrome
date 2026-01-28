@@ -3,8 +3,9 @@
 import "./ColorForm.css";
 import ColorInput from "../ColorInput/ColorInput";
 import { uid } from "uid";
+import { useState } from "react";
 
-export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initialData = { role: "some color", hex: "#00ff00", contrastText: "#000000" } }) {
+export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initialData = { role: "Color Name", hex: "#00ff00", contrastText: "#000000" } }) {
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -38,20 +39,22 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
         <form data-js={formId} onSubmit={handleSubmit}>
             {isEditMode ? <p className="edit-color-form__headline">{headline}</p> : <h2>{headline}</h2>}
 
-            <label htmlFor="role">
-                Role
-                <input name="role" id="role" type="text" defaultValue={initialData.role} />
-            </label>
+            <div className="form__group">
+                <label className="form__label" htmlFor="role">
+                    Role
+                </label>
+                <input name="role" id="role" type="text" placeholder={initialData.role} maxLength="25" required />
 
-            <label htmlFor="hex">
-                Hex
-                <ColorInput id="hex" defaultValue={initialData.hex} />
-            </label>
+                <label className="form__label" htmlFor="hex">
+                    Hex
+                </label>
+                <ColorInput id="hex" placeholder={initialData.hex} />
 
-            <label htmlFor="contrastText">
-                Contrast Text
-                <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
-            </label>
+                <label className="form__label" htmlFor="contrastText">
+                    Contrast Text
+                </label>
+                <ColorInput id="contrastText" placeholder={initialData.contrastText} />
+            </div>
 
             <button type="submit" className="btn btn--submit">
                 {buttonText}

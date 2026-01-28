@@ -10,10 +10,25 @@
     margin: 10px;
     padding: 15px;
 }
-form {
-    display: grid;
-    gap: 1rem;
+form[data-js="edit-color-form"] {
+    padding: 15px;
 }
+.form__group {
+    margin: 10px 0 10px 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.form__group--picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 1.25rem;
+}
+
 .edit-color-form__headline {
     background: #aaf0a1;
     color: #018052;
@@ -23,11 +38,11 @@ form {
     padding: 0px;
 }
 input {
-    color: black;
+    color: rgb(0, 0, 0);
 }
 button[type="submit"] {
     background-color: #018052;
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
@@ -53,8 +68,6 @@ button[type="cancel"] {
     min-width: 30%;
 }
 
-label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+.form__label {
+    text-align: left;
 }

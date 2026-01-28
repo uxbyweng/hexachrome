@@ -24,7 +24,7 @@
 .header__logo-polygon {
     width: 5rem;
     aspect-ratio: 1;
-    background: var(--logo-poly-gradient);
+    background: var(--logo-polygon-gradient);
     clip-path: polygon(
         100% 50%,
         81.17% 89.09%,
