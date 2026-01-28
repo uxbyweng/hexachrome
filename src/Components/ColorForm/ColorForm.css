@@ -27,7 +27,7 @@ input {
 }
 button[type="submit"] {
     background-color: #018052;
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
