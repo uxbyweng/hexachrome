@@ -30,42 +30,31 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
         event.target.elements.role.focus(); // Cursor wieder in das oberste Input (role) setzen
     }
 
-    return !isEditMode ? (
-        <form data-js="add-color-form" onSubmit={handleSubmit}>
-            <h2>Add new color</h2>
+    const formId = isEditMode ? "edit-color-form" : "add-color-form";
+    const headline = isEditMode ? "Update color" : "Add new color";
+    const buttonText = isEditMode ? "Update Color" : "Add Color";
+
+    return (
+        <form data-js={formId} onSubmit={handleSubmit}>
+            {isEditMode ? <p className="edit-color-form__headline">{headline}</p> : <h2>{headline}</h2>}
+
             <label htmlFor="role">
                 Role
                 <input name="role" id="role" type="text" defaultValue={initialData.role} />
             </label>
+
             <label htmlFor="hex">
                 Hex
                 <ColorInput id="hex" defaultValue={initialData.hex} />
             </label>
+
             <label htmlFor="contrastText">
                 Contrast Text
                 <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
             </label>
+
             <button type="submit" className="btn btn--submit">
-                Add Color
-            </button>
-        </form>
-    ) : (
-        <form data-js="edit-color-form" onSubmit={handleSubmit}>
-            <p className="edit-color-form__headline">Update color</p>
-            <label htmlFor="role">
-                Role
-                <input name="role" id="role" type="text" defaultValue={initialData.role} />
-            </label>
-            <label htmlFor="hex">
-                Hex
-                <ColorInput id="hex" defaultValue={initialData.hex} />
-            </label>
-            <label htmlFor="contrastText">
-                Contrast Text
-                <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
-            </label>
-            <button type="submit" className="btn btn--submit">
-                Update Color
+                {buttonText}
             </button>
         </form>
     );
