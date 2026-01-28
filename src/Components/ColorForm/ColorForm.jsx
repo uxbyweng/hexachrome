@@ -3,7 +3,6 @@
 import "./ColorForm.css";
 import ColorInput from "../ColorInput/ColorInput";
 import { uid } from "uid";
-import { useState } from "react";
 
 export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initialData = { role: "Color Name", hex: "#00ff00", contrastText: "#000a1e" } }) {
     function handleSubmit(event) {
@@ -43,17 +42,17 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
                 <label className="form__label" htmlFor="role">
                     Role
                 </label>
-                <input name="role" id="role" type="text" placeholder={initialData.role} maxLength="25" required />
+                <input name="role" id="role" type="text" defaultValue={initialData.role} maxLength="25" required />
 
                 <label className="form__label" htmlFor="hex">
                     Hex
                 </label>
-                <ColorInput id="hex" placeholder={initialData.hex} />
+                <ColorInput id="hex" defaultValue={initialData.hex} />
 
                 <label className="form__label" htmlFor="contrastText">
                     Contrast Text
                 </label>
-                <ColorInput id="contrastText" placeholder={initialData.contrastText} />
+                <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
             </div>
 
             <button type="submit" className="btn btn--submit">

@@ -54,39 +54,28 @@
     cursor: pointer;
 }
 
-.btn--cross {
+.btn--cross,
+.btn--edit {
     position: absolute;
-    font-weight: 700;
-    opacity: 0.7;
     top: 0;
-    right: 0;
-}
-.btn--cross:hover {
+    background: #fff;
+    color: #000;
+    font-weight: 700;
     cursor: pointer;
-    opacity: 1;
+}
+
+.btn--cross {
+    right: 0;
 }
 
 .btn--edit {
-    position: absolute;
-    font-weight: 700;
-    opacity: 0.7;
-    top: 0;
     right: 40px;
 }
+
+.btn--cross:hover,
 .btn--edit:hover {
-    cursor: pointer;
-    opacity: 1;
-}
-.btn--copy {
-    background: white;
-    font-weight: 700;
-}
-img.btn--copy {
-    padding: 6px;
-}
-.btn--copy:hover {
-    cursor: pointer;
-    opacity: 1;
+    background: #000;
+    color: #fff;
 }
 
 .btn--delete {

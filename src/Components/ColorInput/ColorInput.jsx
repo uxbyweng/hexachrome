@@ -1,8 +1,8 @@
 // Components\ColorInput\ColorInput.jsx
 import { useState } from "react";
 import "./ColorInput.css";
-export default function ColorInput({ id, placeholder }) {
-    const [inputValue, setInputValue] = useState(placeholder);
+export default function ColorInput({ id, defaultValue }) {
+    const [inputValue, setInputValue] = useState(defaultValue);
 
     function handleInputValue(event) {
         setInputValue(event.target.value);
