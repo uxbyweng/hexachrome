@@ -15,8 +15,6 @@ function App() {
         // initial colors aus lib laden (wenn noch keine colors im local storage vorhanden )
         defaultValue: initialColors,
     });
-    setColors(initialColors);
-    console.log("colors", colors);
 
     // STATE FÜR EDITMODE MIT ID
     // wenn 'activeEditId' eine ID enthält => Edit Mode = aktive
