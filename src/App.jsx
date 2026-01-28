@@ -8,13 +8,13 @@ import Header from "./Components/Header/Header";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
-    const [editingColorId, setEditingColorId] = useState(null); // bei nul wird der editmodus ausgeschaltet
+    const [activeEditId, setActiveEditId] = useState(null); // bei nul wird der editmodus ausgeschaltet
 
     // FEEDBACK - Anzahl Colors bzw. No Cololors
     const feedback = colors.length > 0 ? `Total theme colors: ${colors.length}` : "No colors. Start by adding one!";
 
     // UPDATE COLORS (ID)
-    function handleUpdateColor(updatedColor) {
+    function handleUpdateColor(idToUpdate, data) {
         //  liste erstelen damit  nichts kaputt geht
         const updatedColors = [];
 
@@ -23,7 +23,14 @@ function App() {
             const currentColor = colors[i]; // aktuelle color speichern
 
             // wenn id gleich der aktuellen farbe entspricht ...
-            if (currentColor.id === updatedColor.id) {
+            if (currentColor.id === idToUpdate) {
+                const updatedColor = {
+                    // neues Object bauen
+                    ...currentColor, // alle Eigenschaften von currentColor ins neue Objekt kopieren
+                    role: data.role, // 'role' neu setzen
+                    hex: data.hex, // 'hex' neu setzen
+                    contrastText: data.contrastText, // 'contrastText' neu setzen
+                };
                 updatedColors.push(updatedColor); // color ersetzen
             } else {
                 updatedColors.push(currentColor); // color hinzufügen
@@ -31,18 +38,18 @@ function App() {
         }
 
         setColors(updatedColors); // state updaten
-        setEditingColorId(null); // edit mode ausschalten
+        setActiveEditId(null); // edit mode ausschalten
     }
 
     // EDIT MODE
     function handleEdit(id) {
         // color id speichern und an state übergeben
-        setEditingColorId(id);
+        setActiveEditId(id);
     }
 
     function handleCancelEdit() {
         // color id auf "null" setzen damit sich edit formular wieder schliesst
-        setEditingColorId(null);
+        setActiveEditId(null);
     }
 
     // COLOR HINZUFÜGEN
@@ -73,7 +80,7 @@ function App() {
         <div className="app">
             <Header />
             <main>
-                {editingColorId === null && (
+                {activeEditId === null && (
                     <section className="form">
                         <ColorForm onAddColor={handleAddColor} isEditMode={false} />
                     </section>
@@ -88,7 +95,7 @@ function App() {
                                     onColorDelete={handleColorDelete}
                                     id={color.id}
                                     onEdit={() => handleEdit(color.id)}
-                                    isEditMode={editingColorId === color.id}
+                                    isEditMode={activeEditId === color.id}
                                     onUpdateColor={handleUpdateColor}
                                     onCancelEdit={handleCancelEdit}
                                 />

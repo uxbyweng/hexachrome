@@ -13,14 +13,7 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
 
         if (isEditMode) {
             // ID behalten, vorhandenes Objekt updaten
-            const updatedColorObject = {
-                ...initialData,
-                role: data.role,
-                hex: data.hex,
-                contrastText: data.contrastText,
-            };
-            // console.log(data.hex);
-            onUpdateColor(updatedColorObject);
+            onUpdateColor(initialData.id, data);
             return;
         }
 
