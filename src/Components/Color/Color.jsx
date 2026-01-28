@@ -1,11 +1,10 @@
 // Components\Color\Color.jsx
 import { useState } from "react";
-
+import ColorForm from "../ColorForm/ColorForm";
 import "./Color.css";
-export default function Color({ color, onColorDelete, id }) {
+export default function Color({ color, onColorDelete, id, onEdit, isEditMode, onUpdateColor, onCancelEdit }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    <button type="button" onClick={() => setIsOpen(true)}></button>;
     return (
         <>
             <div className="color" style={{ backgroundColor: color.hex }}>
@@ -27,12 +26,28 @@ export default function Color({ color, onColorDelete, id }) {
                 <p className="color__contrast" style={{ color: color.contrastText }}>
                     contrast: {color.contrastText}
                 </p>
-                <button type="button" className="btn btn--edit">
-                    ✎
-                </button>
-                <button type="button" className="btn btn--cross" onClick={() => setIsOpen(true)} aria-label={`Delete color ${color.hex}`}>
-                    ✕
-                </button>
+
+                {/* Edit-Form nur wenn diese Card nicht im Edit ist */}
+                {!isEditMode && (
+                    <>
+                        <button type="button" className="btn btn--edit" onClick={onEdit} aria-label={`Edit color ${color.hex}`}>
+                            ✎
+                        </button>
+                        <button type="button" className="btn btn--cross" onClick={() => setIsOpen(true)} aria-label={`Delete color ${color.hex}`}>
+                            ✕
+                        </button>
+                    </>
+                )}
+
+                {/* Edit-Form nur wenn diese Card im Edit ist */}
+                {isEditMode && (
+                    <>
+                        <ColorForm isEditMode={true} initialData={color} onUpdateColor={onUpdateColor} />
+                        <button type="cancel" className="btn" onClick={onCancelEdit}>
+                            Cancel Edit
+                        </button>
+                    </>
+                )}
             </div>
         </>
     );
