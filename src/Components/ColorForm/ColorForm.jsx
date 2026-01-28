@@ -5,7 +5,7 @@ import ColorInput from "../ColorInput/ColorInput";
 import { uid } from "uid";
 import { useState } from "react";
 
-export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initialData = { role: "Color Name", hex: "#00ff00", contrastText: "#000000" } }) {
+export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initialData = { role: "Color Name", hex: "#00ff00", contrastText: "#000a1e" } }) {
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -32,11 +32,11 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
     }
 
     const formId = isEditMode ? "edit-color-form" : "add-color-form";
-    const headline = isEditMode ? "Update color" : "Add new color";
+    const headline = isEditMode ? "Edit color" : "Add new color";
     const buttonText = isEditMode ? "Update Color" : "Add Color";
 
     return (
-        <form data-js={formId} onSubmit={handleSubmit}>
+        <form className="form" data-js={formId} onSubmit={handleSubmit}>
             {isEditMode ? <p className="edit-color-form__headline">{headline}</p> : <h2>{headline}</h2>}
 
             <div className="form__group">
