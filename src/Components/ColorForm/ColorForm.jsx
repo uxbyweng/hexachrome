@@ -27,7 +27,6 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
         onAddColor(newColorObject);
 
         event.target.reset(); // formular wieder in den Ausgangszustand zurück setzen
-        event.target.elements.role.focus(); // Cursor wieder in das oberste Input (role) setzen
     }
 
     const formId = isEditMode ? "edit-color-form" : "add-color-form";
@@ -50,7 +49,7 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
                 <ColorInput id="hex" defaultValue={initialData.hex} />
 
                 <label className="form__label" htmlFor="contrastText">
-                    Contrast Text
+                    Contrast
                 </label>
                 <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
             </div>
