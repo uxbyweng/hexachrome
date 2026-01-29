@@ -63,7 +63,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
 
                 <div className="copy">
                     <h2 className="color__hex">{color.hex}</h2>
-                    <CopyToClipboard color={color} />
+                    {/* <CopyToClipboard color={color} /> */}
                 </div>
 
                 <p className="color__role" style={{ color: color.contrastText }}>
@@ -83,6 +83,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                 {/* edit btn und delete button nur anzeigen wenn editmode nich aktiv ist */}
                 {!isEditMode && (
                     <>
+                        <CopyToClipboard color={color} />
                         <button type="button" className="btn btn--edit" onClick={onEdit} aria-label={`Edit color ${color.hex}`}>
                             ✎
                         </button>
