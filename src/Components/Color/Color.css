@@ -1,14 +1,16 @@
+/* Color.css */
+
 .color {
     position: relative;
     border: 1px solid #ccc;
     border-radius: 15px;
     margin: 0px 10px;
-    padding: 5px;
+    padding: 15px;
 }
 .color__hex {
     border-radius: 15px;
     display: inline;
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 5px 15px;
     background: #000a1e;
     color: var(--text-color);
@@ -17,35 +19,28 @@
 }
 .color__role {
     font-size: 2.5rem;
-    padding: 2px 6px;
+    padding: 10px 6px;
     color: var(--text-color);
 }
-.color__role--dark {
-    color: #000a1e;
-}
 .contrast-group {
-    background: transparent;
-    border: 1px solid #000000;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #000;
     border-radius: 15px;
-    display: inline;
 }
 .color__contrast-text {
     border-radius: 15px;
     display: inline;
     font-size: 1.8rem;
     color: var(--text-color);
-    margin-left: 10px;
 }
 .color__contrast-score {
     border-radius: 15px;
     display: inline;
     font-size: 1.8rem;
     color: var(--text-color);
-    margin-left: 10px;
     padding: 0 10px;
-}
-.color__contrast--dark {
-    color: #000a1e;
 }
 .contrast-bg-green {
     background: #00a000;
@@ -62,58 +57,6 @@
     justify-content: center;
     align-items: center;
 }
-.color__message {
-    font-size: 1.4rem;
-}
-.color__message--hide {
-    display: none;
-}
-
-.btn {
-    font-weight: 500;
-    border: none;
-    border-radius: 20px;
-    margin: 5px;
-}
-.btn:hover {
-    cursor: pointer;
-}
-
-.btn--cross,
-.btn--edit {
-    position: absolute;
-    top: 0;
-    background: #fff;
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.btn--cross {
-    right: 0;
-}
-
-.btn--edit {
-    right: 40px;
-}
-
-.btn--cross:hover,
-.btn--edit:hover {
-    background: #000;
-    color: #fff;
-}
-
-.btn--delete {
-    background-color: red;
-    color: var(--text-color);
-    padding: 5px 15px;
-}
-.btn--cancel {
-    background-color: rgb(177, 177, 177);
-    color: rgb(0, 0, 0);
-    padding: 5px 15px;
-}
-
 .overlay {
     position: absolute;
     inset: 0;
@@ -134,11 +77,9 @@
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
-
 .overlay__button-group {
     padding: 0.1rem;
 }
-
 .overlay--hide {
     display: none;
 }
