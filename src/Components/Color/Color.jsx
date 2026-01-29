@@ -1,11 +1,50 @@
 // Components\Color\Color.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ColorForm from "../ColorForm/ColorForm";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 import "./Color.css";
 
 export default function Color({ color, onColorDelete, id, onEdit, isEditMode, onUpdateColor, onCancelEdit }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [contrastResult, setContrastResult] = useState(null);
+    const [contrastResultBgColor, setContrastResultBgColor] = useState("contrast-bg-orange");
+
+    // HANDLE CONTRAST SCORING - FETCH API
+    useEffect(() => {
+        async function getResult() {
+            try {
+                const response = await fetch("https://www.aremycolorsaccessible.com/api/are-they", {
+                    mode: "cors",
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ colors: [color.contrastText, color.hex] }),
+                });
+                const data = await response.json();
+                setContrastResult(data.overall);
+                switch (data.overall) {
+                    case "Yup":
+                        // console.log("Green");
+                        setContrastResultBgColor("contrast-bg-green");
+                        break;
+                    case "Kinda":
+                        // console.log("Orange");
+                        setContrastResultBgColor("contrast-bg-orange");
+                        break;
+                    case "Nope":
+                        // console.log("Red");
+                        setContrastResultBgColor("contrast-bg-red");
+                        break;
+                    default:
+                        // console.log("Orange");
+                        setContrastResultBgColor("contrast-bg-orange");
+                }
+                //console.log("Overall Contrast Score: ", data.overall);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getResult();
+    }, [color.contrastText, color.hex]);
 
     return (
         <>
@@ -30,9 +69,16 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                 <p className="color__role" style={{ color: color.contrastText }}>
                     <strong>{color.role}</strong>
                 </p>
-                <p className="color__contrast" style={{ color: color.contrastText }}>
-                    contrast: {color.contrastText}
-                </p>
+                <div className="contrast-group">
+                    <p className="color__contrast-text" style={{ color: color.contrastText }}>
+                        Contrast: {color.contrastText}
+                    </p>
+                    {contrastResult && (
+                        <p className={`color__contrast-score ${contrastResultBgColor}`}>
+                            Score: <strong>{contrastResult}!</strong>
+                        </p>
+                    )}
+                </div>
 
                 {/* edit btn und delete button nur anzeigen wenn editmode nich aktiv ist */}
                 {!isEditMode && (

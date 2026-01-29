@@ -47,7 +47,6 @@ function App() {
                 updatedColors.push(currentColor); // color hinzufügen
             }
         }
-
         setColors(updatedColors); // state updaten
         setActiveEditId(null); // edit mode ausschalten
     }

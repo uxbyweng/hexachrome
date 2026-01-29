@@ -23,13 +23,38 @@
 .color__role--dark {
     color: #000a1e;
 }
-.color__contrast {
+.contrast-group {
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: inline;
+}
+.color__contrast-text {
+    border-radius: 15px;
+    display: inline;
     font-size: 1.8rem;
-    padding: 2px 6px;
     color: var(--text-color);
+    margin-left: 10px;
+}
+.color__contrast-score {
+    border-radius: 15px;
+    display: inline;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 10px;
+    padding: 0 10px;
 }
 .color__contrast--dark {
     color: #000a1e;
+}
+.contrast-bg-green {
+    background: #00a000;
+}
+.contrast-bg-orange {
+    background: #ff9900;
+}
+.contrast-bg-red {
+    background: #cc0000;
 }
 .copy {
     display: flex;
