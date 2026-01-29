@@ -8,8 +8,6 @@
     z-index: 3;
     height: 120px;
     box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
-    -webkit-box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
-    -moz-box-shadow: -1px 9px 86px 45px rgba(0, 10, 30, 0.82);
 }
 
 .header__logo {

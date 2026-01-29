@@ -48,26 +48,12 @@ form.form[data-js="edit-color-form"] {
     font-weight: 700;
     padding: 2px 15px;
 }
-input {
+.form input {
     color: rgb(0, 0, 0);
 }
 button[type="submit"] {
     background-color: #018052;
     color: var(--text-color);
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 2.5;
-    padding: 3px 12px 3px 12px;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 10px;
-    min-width: 30%;
-}
-
-button[type="cancel"] {
-    background-color: rgb(211, 211, 211);
-    color: rgb(0, 0, 0);
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;

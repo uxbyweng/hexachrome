@@ -1,4 +1,7 @@
+/*  App.css */
+
 @import "./assets/styles/main.css";
+@import "./assets/styles/buttons.css";
 @import "./assets/styles/fonts.css";
 @import "./assets/styles/variables.css";
 
@@ -47,6 +50,7 @@ small {
 }
 
 main {
+    display: grid;
     padding: 20px 30px 120px 30px;
     justify-items: center;
 }
@@ -67,6 +71,5 @@ section {
 }
 .theme__list-item {
     position: relative;
-    margin-left: 0;
-    margin: 2cqh 0;
+    margin: 20px 0;
 }

@@ -1,0 +1,61 @@
+/* buttons.css */
+
+/* Default */
+.btn {
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+}
+.btn:hover {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Button Cross / Edit  */
+.btn--cross,
+.btn--edit {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+}
+.btn--cross {
+    right: 0;
+}
+.btn--edit {
+    right: 40px;
+}
+
+/* Button Delete  */
+.btn--delete {
+    background-color: red;
+    color: var(--text-color);
+    padding: 5px 15px;
+}
+.btn--delete:hover {
+    background-color: rgb(185, 7, 7);
+}
+
+/* Button Cancel  */
+.btn--cancel {
+    background-color: rgb(177, 177, 177);
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+}
+.btn--cancel:hover {
+    background-color: rgb(104, 104, 104);
+}
+
+/* CopyToClipBoard */
+.btn--copy {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    right: 80px;
+}
