@@ -4,10 +4,16 @@ import ColorForm from "../ColorForm/ColorForm";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 import "./Color.css";
 
+const contrastBgMap = {
+    Yup: "contrast-bg-green",
+    Kinda: "contrast-bg-orange",
+    Nope: "contrast-bg-red",
+};
+
 export default function Color({ color, onColorDelete, id, onEdit, isEditMode, onUpdateColor, onCancelEdit }) {
     const [isOpen, setIsOpen] = useState(false);
     const [contrastResult, setContrastResult] = useState(null);
-    const [contrastResultBgColor, setContrastResultBgColor] = useState("contrast-bg-orange");
+    const contrastResultBgColor = contrastBgMap[contrastResult] || "contrast-bg-orange";
 
     // HANDLE CONTRAST SCORING - FETCH API
     useEffect(() => {
@@ -21,24 +27,6 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                 });
                 const data = await response.json();
                 setContrastResult(data.overall);
-                switch (data.overall) {
-                    case "Yup":
-                        // console.log("Green");
-                        setContrastResultBgColor("contrast-bg-green");
-                        break;
-                    case "Kinda":
-                        // console.log("Orange");
-                        setContrastResultBgColor("contrast-bg-orange");
-                        break;
-                    case "Nope":
-                        // console.log("Red");
-                        setContrastResultBgColor("contrast-bg-red");
-                        break;
-                    default:
-                        // console.log("Orange");
-                        setContrastResultBgColor("contrast-bg-orange");
-                }
-                //console.log("Overall Contrast Score: ", data.overall);
             } catch (error) {
                 console.log(error);
             }
@@ -49,6 +37,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
     return (
         <>
             <article className="color" style={{ backgroundColor: color.hex }}>
+                {/* DELETE CONFIRMATION DIALOG */}
                 <dialog className={`overlay${isOpen ? "" : " overlay--hide"}`}>
                     <h2 className="overlay__headline">Really delete this color?</h2>
                     <menu className="overlay__button-group">
@@ -63,7 +52,6 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
 
                 <div className="copy">
                     <h2 className="color__hex">{color.hex}</h2>
-                    {/* <CopyToClipboard color={color} /> */}
                 </div>
 
                 <p className="color__role" style={{ color: color.contrastText }}>
@@ -80,7 +68,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                     )}
                 </div>
 
-                {/* edit btn und delete button nur anzeigen wenn editmode nich aktiv ist */}
+                {/* SHOW ONLY IF EDIT MODE = NOT ACTIVE */}
                 {!isEditMode && (
                     <>
                         <CopyToClipboard color={color} />
@@ -93,7 +81,7 @@ export default function Color({ color, onColorDelete, id, onEdit, isEditMode, on
                     </>
                 )}
 
-                {/* color card nur anzeigen wenn editmode aktiv ist */}
+                {/* SHOW ONLY IF EDIT MODE = ACTIVE */}
                 {isEditMode && (
                     <>
                         <ColorForm isEditMode={true} initialData={color} onUpdateColor={onUpdateColor} />

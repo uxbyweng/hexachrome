@@ -8,9 +8,7 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 
 function App() {
-    // STATE MIT LOCAL STORAGE
-    // key = "colors"
-    // options = defaultValue
+    // STATE MIT LOCAL STORAGE (key = colors, opions = defaultValue)
     const [colors, setColors] = useLocalStorageState("colors", {
         // initial colors aus lib laden (wenn noch keine colors im local storage vorhanden )
         defaultValue: initialColors,
@@ -26,7 +24,7 @@ function App() {
 
     // UPDATE COLORS (ID)
     function handleUpdateColor(idToUpdate, data) {
-        //  liste erstelen damit  nichts kaputt geht
+        //  liste mit colors erstelen
         const updatedColors = [];
 
         // durch alle colors loopen
@@ -66,7 +64,7 @@ function App() {
     const handleAddColor = (newColor) => {
         const updatedColors = [newColor, ...colors]; // alte Color Liste kopieren und neue Color hinzufügen
         setColors(updatedColors); // State setzen
-        console.log(updatedColors); // Aktuellen State in der Conole ausgeben
+        // console.log(updatedColors); // Aktuellen State in der Conole ausgeben
     };
 
     // COLOR LÖSCHEN
@@ -74,14 +72,14 @@ function App() {
         const updatedColors = [];
 
         for (let i = 0; i < colors.length; i++) {
-            console.log(colors.length);
+            // console.log(colors.length);
             const color = colors[i];
 
             if (color.id !== idToDelete) {
                 updatedColors.push(color);
             }
         }
-        setColors(updatedColors);
+        setColors(updatedColors); // state neue setzen
     }
     // code review suggestion from @klaus
     //  setColors(colors.filter(color => color.id !== idToDelete));
@@ -101,11 +99,11 @@ function App() {
                         {colors.map((color) => (
                             <li key={color.id} className="theme__list-item">
                                 <Color
-                                    color={color}
-                                    onColorDelete={handleColorDelete}
-                                    id={color.id}
-                                    onEdit={() => handleEdit(color.id)}
-                                    isEditMode={activeEditId === color.id}
+                                    color={color} // Color Object { id, role, hex, contrastText, .. }
+                                    onColorDelete={handleColorDelete} // Funktion
+                                    id={color.id} // primitive
+                                    onEdit={() => handleEdit(color.id)} // Funktion
+                                    isEditMode={activeEditId === color.id} // boolean
                                     onUpdateColor={handleUpdateColor}
                                     onCancelEdit={handleCancelEdit}
                                 />

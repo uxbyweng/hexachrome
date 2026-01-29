@@ -12,7 +12,7 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
         const data = Object.fromEntries(formData);
 
         if (isEditMode) {
-            // ID behalten, vorhandenes Objekt updaten
+            // id und data Obkect übergeben an:
             onUpdateColor(initialData.id, data);
             return;
         }
