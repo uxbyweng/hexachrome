@@ -6,11 +6,13 @@
     border: none;
     border-radius: 20px;
     margin: 5px;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
 }
 .btn:hover {
     background: #000;
     color: #fff;
-    cursor: pointer;
 }
 
 /* Button Cross / Edit  */
@@ -18,8 +20,6 @@
 .btn--edit {
     position: absolute;
     top: 0;
-    background: #fff;
-    color: #000;
     font-weight: 700;
 }
 .btn--cross {
@@ -27,6 +27,14 @@
 }
 .btn--edit {
     right: 40px;
+}
+
+/* Button Copy */
+.btn--copy {
+    position: absolute;
+    top: 0;
+    font-weight: 700;
+    right: 80px;
 }
 
 /* Button Delete  */
@@ -37,6 +45,7 @@
 }
 .btn--delete:hover {
     background-color: rgb(185, 7, 7);
+    color: var(--text-color);
 }
 
 /* Button Cancel  */
@@ -47,15 +56,5 @@
 }
 .btn--cancel:hover {
     background-color: rgb(104, 104, 104);
-}
-
-/* CopyToClipBoard */
-.btn--copy {
-    position: absolute;
-    top: 0;
-    background: #fff;
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-    right: 80px;
+    color: var(--text-color);
 }

@@ -10,7 +10,7 @@
 .color__hex {
     border-radius: 15px;
     display: inline;
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 5px 15px;
     background: #000a1e;
     color: var(--text-color);
