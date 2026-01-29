@@ -1,7 +1,6 @@
 // Components/CopyToClipboard/CopyToClipboard.jsx
 
 import { useState } from "react";
-import "./CopyToClipboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 
