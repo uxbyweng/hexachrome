@@ -35,8 +35,6 @@ export const initialColors = [
         id: "c6",
         role: "ZENON RUBY",
         hex: "#b22e4b",
-        contrastText: "#e1ff00
-
-",
+        contrastText: "#e1ff00",
     },
 ];
