@@ -34,9 +34,8 @@ export default function ColorForm({ onAddColor, onUpdateColor, isEditMode, initi
     const buttonText = isEditMode ? "Update Color" : "Add Color";
 
     return (
-        <form className="form" data-js={formId} onSubmit={handleSubmit}>
+        <form className={isEditMode ? `form form--edit` : `form form--add`} data-js={formId} onSubmit={handleSubmit}>
             {isEditMode ? <p className="edit-color-form__headline">{headline}</p> : <h2>{headline}</h2>}
-
             <div className="form__group">
                 <label className="form__label" htmlFor="role">
                     Role

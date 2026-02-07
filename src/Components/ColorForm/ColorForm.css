@@ -4,9 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #30453c;
-    background: linear-gradient(180deg, rgb(0, 116, 56) 0%, rgba(218, 245, 235, 1) 100%);
-    border: 1px solid #ccc;
+    background-color: rgb(20, 41, 60);
+    border: 1px solid rgb(100, 100, 100);
     border-radius: 15px;
     margin: 0 10px;
     padding: 15px;
@@ -67,4 +66,12 @@ button[type="submit"] {
 
 .form__label {
     text-align: left;
+}
+.form--add {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form--add label {
+    color: #c0c7d4;
 }

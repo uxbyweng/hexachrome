@@ -61,8 +61,24 @@ section {
 
 /* Color Theme List --> eventuell als Component auslagern */
 .theme__feedback {
+    background-color: rgb(20, 41, 60);
     margin-top: 20px;
+    position: relative;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 15px;
+    margin: 0px 10px;
+    padding: 15px;
 }
+.theme__feedback span {
+    color: rgb(0, 248, 165);
+    font-style: italic;
+}
+.theme__feedback.theme__feedback--open {
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .theme__list {
     list-style-type: none;
     line-height: 1.5;

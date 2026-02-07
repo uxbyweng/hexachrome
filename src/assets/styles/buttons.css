@@ -16,6 +16,7 @@
 }
 
 /* Button Cross / Edit  */
+.btn--add,
 .btn--cross,
 .btn--edit {
     position: absolute;
@@ -27,6 +28,10 @@
 }
 .btn--edit {
     right: 40px;
+}
+.btn--add {
+    top: 10px;
+    right: 10px;
 }
 
 /* Button Copy */

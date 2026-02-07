@@ -6,8 +6,12 @@ import Color from "./Components/Color/Color";
 import ColorForm from "./Components/ColorForm/ColorForm";
 import "./App.css";
 import Header from "./Components/Header/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faCheck, faPlus, faClose } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
+    const [isAddOpen, setIsAddOpen] = useState(false);
+
     // STATE MIT LOCAL STORAGE (key = colors, opions = defaultValue)
     const [colors, setColors] = useLocalStorageState("colors", {
         // initial colors aus lib laden (wenn noch keine colors im local storage vorhanden )
@@ -20,7 +24,14 @@ function App() {
     const [activeEditId, setActiveEditId] = useState(null);
 
     // FEEDBACK - Anzahl Colors bzw. No Cololors
-    const feedback = colors.length > 0 ? `Total theme colors: ${colors.length}` : "No colors. Start by adding one!";
+    const feedback =
+        colors.length > 0 ? (
+            <>
+                Theme <span>DEFAULT</span> with {colors.length} colors.
+            </>
+        ) : (
+            "No colors. Start by adding one!"
+        );
 
     // UPDATE COLORS (ID)
     function handleUpdateColor(idToUpdate, data) {
@@ -49,10 +60,16 @@ function App() {
         setActiveEditId(null); // edit mode ausschalten
     }
 
+    function handleOpenAddColorForm() {
+        setIsAddOpen((v) => !v);
+        setActiveEditId(null);
+    }
+
     // EDIT MODE
     function handleEdit(id) {
         // color id speichern und an state übergeben
         setActiveEditId(id);
+        setIsAddOpen(null);
     }
 
     function handleCancelEdit() {
@@ -88,13 +105,27 @@ function App() {
         <div className="app">
             <Header />
             <main>
+                <section>
+                    <p className={isAddOpen ? `theme__feedback theme__feedback--open` : `theme__feedback`}>
+                        {feedback}
+                        <button
+                            type="button"
+                            className="btn btn--add"
+                            aria-expanded={isAddOpen}
+                            aria-controls="add-color-section"
+                            onClick={handleOpenAddColorForm}>
+                            <FontAwesomeIcon className="fa-icon" icon={isAddOpen ? faClose : faPlus} />
+                        </button>
+                    </p>
+                </section>
                 {activeEditId === null && (
                     <section>
-                        <ColorForm onAddColor={handleAddColor} isEditMode={false} />
+                        <div id="add-color-section" hidden={!isAddOpen}>
+                            <ColorForm onAddColor={handleAddColor} isEditMode={false} />
+                        </div>
                     </section>
                 )}
                 <section className="theme">
-                    <p className="theme__feedback">{feedback}</p>
                     <ul className="theme__list">
                         {colors.map((color) => (
                             <li key={color.id} className="theme__list-item">

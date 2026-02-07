@@ -1,58 +1,40 @@
-// lib\colors.js
+// lib/colors.js
 
 export const initialColors = [
     {
         id: "c1",
-        role: "primary main",
-        hex: "#ff4a11",
+        role: "PARIS HILTON PINK",
+        hex: "#E12BC6",
         contrastText: "#FFFFFF",
-    }, // Vibrant orange
+    },
     {
         id: "c2",
-        role: "primary dark",
-        hex: "#c73e0b",
+        role: "NICKELODEON SPLAT",
+        hex: "#FF6F15",
         contrastText: "#FFFFFF",
-    }, // Darker shade of orange
+    },
     {
         id: "c3",
-        role: "primary light",
-        hex: "#ff7a3e",
-        contrastText: "#000000",
-    }, // Lighter shade of orange
+        role: "LITTLE MISS SUNSHINE",
+        hex: "#F0C921",
+        contrastText: "#FFFFFF",
+    },
     {
         id: "c4",
-        role: "secondary main",
-        hex: "#5C6BC0",
+        role: "LIMEWIRE",
+        hex: "#36D928",
         contrastText: "#FFFFFF",
-    }, // Indigo Blue
+    },
     {
         id: "c5",
-        role: "secondary dark",
-        hex: "#3949AB",
+        role: "YES WE CYAN",
+        hex: "#50A0E0",
         contrastText: "#FFFFFF",
-    }, // Darker indigo blue
+    },
     {
         id: "c6",
-        role: "secondary light",
-        hex: "#9FA8DA",
-        contrastText: "#000000",
-    }, // Lighter indigo blue
-    {
-        id: "c7",
-        role: "background main",
-        hex: "#252629",
+        role: "ZENON RUBY",
+        hex: "#E54063",
         contrastText: "#FFFFFF",
-    }, // Dark charcoal
-    {
-        id: "c8",
-        role: "background dark",
-        hex: "#1b1d1f",
-        contrastText: "#FFFFFF",
-    }, // Darker charcoal
-    {
-        id: "c9",
-        role: "background light",
-        hex: "#43464b",
-        contrastText: "#FFFFFF",
-    }, // Lighter charcoal
+    },
 ];
