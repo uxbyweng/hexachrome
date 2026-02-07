@@ -4,37 +4,39 @@ export const initialColors = [
     {
         id: "c1",
         role: "PARIS HILTON PINK",
-        hex: "#E12BC6",
-        contrastText: "#FFFFFF",
+        hex: "#c200a5",
+        contrastText: "#fbff00",
     },
     {
         id: "c2",
         role: "NICKELODEON SPLAT",
-        hex: "#FF6F15",
-        contrastText: "#FFFFFF",
+        hex: "#fe9706",
+        contrastText: "#161494",
     },
     {
         id: "c3",
         role: "LITTLE MISS SUNSHINE",
-        hex: "#F0C921",
-        contrastText: "#FFFFFF",
+        hex: "#f3f708",
+        contrastText: "#9f07a2",
     },
     {
         id: "c4",
         role: "LIMEWIRE",
-        hex: "#36D928",
+        hex: "#1ca90f",
         contrastText: "#FFFFFF",
     },
     {
         id: "c5",
         role: "YES WE CYAN",
-        hex: "#50A0E0",
+        hex: "#2b74b1",
         contrastText: "#FFFFFF",
     },
     {
         id: "c6",
         role: "ZENON RUBY",
-        hex: "#E54063",
-        contrastText: "#FFFFFF",
+        hex: "#b22e4b",
+        contrastText: "#e1ff00
+
+",
     },
 ];
